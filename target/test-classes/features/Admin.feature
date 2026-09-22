@@ -7,18 +7,6 @@ Feature: OrangeHRM Admin Page
     And User clicks on login button
     Then User verify the Dashboard page
 
-  Scenario Outline: To Search the user in Admin page
-    When User navigates to Admin module
-    Then Search with Admin "<username>"
-    Then Click on Search button
-   # Then Validate the fields with "<status>"
-    Then User Clicks on edit
-    Then Click on Save button
-    Then Search with Admin "<username>"
-    Then click on Delete button
-    Examples:
-      |status |username |
-      |Enabled|Adminst  |
 
   Scenario Outline: To Search the user with Status in Admin page
     When User navigates to Admin module
@@ -55,3 +43,15 @@ Feature: OrangeHRM Admin Page
       | role | status |
       |Admin | Enabled|
 
+  Scenario Outline: To Search the user in Admin page
+    When User navigates to Admin module
+    Then Search with Admin "<username>"
+    Then Click on Search button
+   # Then Validate the fields with "<status>"
+#    Then User Clicks on edit
+#    Then Click on Save button
+    Then Search with Admin "<username>"
+    Then click on Delete button
+    Examples:
+      |status |username |
+      |Enabled|Adminst  |

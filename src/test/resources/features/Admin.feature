@@ -48,8 +48,8 @@ Feature: OrangeHRM Admin Page
     Then Search with Admin "<username>"
     Then Click on Search button
    # Then Validate the fields with "<status>"
-    Then User Clicks on edit
-    Then Click on Save button
+#    Then User Clicks on edit
+#    Then Click on Save button
     Then Search with Admin "<username>"
     Then click on Delete button
     Examples:

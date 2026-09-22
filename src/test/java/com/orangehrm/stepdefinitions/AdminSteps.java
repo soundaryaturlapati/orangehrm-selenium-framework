@@ -85,11 +85,11 @@ public class AdminSteps {
     }
     @Then("User Clicks on edit")
     public void user_clicks_on_edit() {
-       adminPage.clicOnEditButton();
+       adminPage.clickOnEditButton();
     }
     @Then("click on Delete button")
     public void click_on_delete_button() {
-       adminPage.clickOnAddButton();
+       adminPage.clickOnDelButton();
     }
 
 }

@@ -81,6 +81,7 @@ public class AdminPage {
     public void clickOnAddButton(){
         wait.implictWait(5);
         driver.findElement(adminAddBtn).click();
+
     }
 
     public void enterEmployeeName(){
@@ -100,7 +101,9 @@ public class AdminPage {
     }
 
     public void enterUserName(){
+
         driver.findElement(adminUserNameTxt).sendKeys("Adminst");
+        wait.implictWait(5);
     }
     public void enterPassword(){
         driver.findElement(adminPasswordTxt).sendKeys("Asdf@1234qrt");
@@ -108,14 +111,20 @@ public class AdminPage {
 
     public void enterConfirmPassword(){
         driver.findElement(adminCnfrmPasswordTxt).sendKeys("Asdf@1234qrt");
+        wait.implictWait(10);
     }
 
     public void clickOnSaveButton(){
-        wait.implictWait(5);
+        wait.implictWait(10);
         driver.findElement(adminSaveBtn).click();
+      //  WebElement statusMsg = driver.findElement(By.xpath("//div[@class='oxd-toast-content oxd-toast-content--success']"));
+        WebDriverWait waitexp = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebElement eleCl = waitexp.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='oxd-toast-content oxd-toast-content--success']")));
+        String message = eleCl.getText();
+        System.out.println(message);
     }
 
-    public void clicOnEditButton(){
+    public void clickOnEditButton(){
         wait.implictWait(5);
         driver.findElement(adminEditBtn).click();
     }
@@ -123,6 +132,9 @@ public class AdminPage {
     public void clickOnDelButton(){
         wait.implictWait(5);
         driver.findElement(adminDelBtn).click();
+        wait.implictWait(5);
+        driver.findElement(By.xpath("//div[@class='orangehrm-modal-footer']//button[contains(.,'Yes, Delete')]")).click();
+
     }
 
 
